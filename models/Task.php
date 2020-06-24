@@ -3,7 +3,7 @@
 include_once 'models/BaseModel.php';
 
 class Task extends BaseModel {
-    public $id = NULL, $title = '', $type = '', $time = '', $place = '-', $finished = 0, $length = '', $comment = '', $user_id = '';
+    public $id = NULL, $title = '', $type = '', $time = '', $place = '-' , $length = '', $comment = '', $user_id = '', $finished = 0;
     
     protected static $attributes = ['title', 'type', 'time', 'place', 'finished', 'length', 'comment', 'user_id'];
     protected static $table = 'tasks';
@@ -45,6 +45,11 @@ class Task extends BaseModel {
             ];
         }
         $sql->execute($params);
-        return $sql->fetchAll();
+        $tasks = [];
+        while ($task = $sql->fetchObject()) {
+            $task->finished = intval($task->finished);
+            $tasks[] = $task;
+        }
+        return $tasks;
     }
 }

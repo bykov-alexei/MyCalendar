@@ -80,7 +80,7 @@ window.onload = function() {
             },
         },
         components: {'task' :task},
-        mounted: async function () {
+        beforeMount: async function () {
             this.getTasks();
         },
         methods: {
