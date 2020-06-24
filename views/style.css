@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body * {
+    width: fit-content;
+    box-sizing: border-box;
+}
+
+#header {
+    background-color: lightgreen;
+    width: 100%;
+    padding: 0 50px;
+}
+
+#header .content {
+    margin: 0 auto;
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.links {
+    align-self: center;
+    font-size: 1.5em;
+}
+
+.links a {
+    margin: 0 20px;
+}
+
+#wrapper {
+    margin: 0 auto;
+    vertical-align: middle;
+}
+
+form {
+    display: grid;
+    width: fit-content;
+    grid-template-columns: 1fr 1fr;
+}
+
+form * {
+    align-self: center;
+}
+
+#table {
+    width: 1000px;
+    margin-top: 50px;
+}
+
+.nav {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav * {
+    align-self: middle;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10px;
+}
+
+table, tr, td, th {
+    border: 1px solid black;
+    word-break: break-all;
+}
+
+td {
+    padding: 10px;
+}
+
+table button {
+    float: right;
+}

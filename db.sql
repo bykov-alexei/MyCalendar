@@ -1,0 +1,21 @@
+CREATE TABLE `users` (
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `login` VARCHAR(255) NOT NULL UNIQUE,
+    `password` VARCHAR(255) NOT NULL,
+
+    PRIMARY KEY(`id`)
+) CHARSET utf8;
+
+CREATE TABLE `tasks` (
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `title` VARCHAR(255) NOT NULL,
+    `type` VARCHAR(255) NOT NULL,
+    `time` DATETIME NOT NULL,
+    `place` VARCHAR(255) NOT NULL DEFAULT '-',
+    `finished` BOOLEAN NOT NULL DEFAULT 0,
+    `length` VARCHAR(255),
+    `comment` TEXT,
+    `user_id` INT UNSIGNED NOT NULL,
+
+    PRIMARY KEY(`id`)
+) CHARSET utf8;
